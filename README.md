@@ -1,6 +1,41 @@
-# Token Drive 0.17.0 · Mac
+# Token Overdrive · 0.9.8
 
-`Token Overdrive.app` per Doppelklick starten. Eine bereits laufende ältere Version vorher mit ⌘Q beenden. Lokal gebaut und ad-hoc signiert, nicht für öffentliche Verteilung notarisiert. Intel-Mac, macOS 14 oder neuer. Der alte Browser-Prototyp `index.html` bleibt eine separate Demo.
+A playful, local-first macOS dashboard for Codex token activity, RSS headlines,
+pixel galleries and tiny arcade breaks. It turns the wait between prompt and
+answer into a small desktop escape.
+
+## What works today
+
+- Reads **local Codex JSONL session logs** from `~/.codex` and displays TOTAL
+  and TRIP token counters. No API key, account credential, prompt or response
+  content is read, uploaded or stored by Token Overdrive.
+- The simulated engine, speedometer and optional local microphone response are
+  driven by the observed local activity. They are playful visualisations, not
+  billing or quota instruments.
+- RSS feeds are fetched only after the user explicitly selects a source. Games
+  and pixel galleries are fully local.
+
+## Important limitation
+
+Token Overdrive does **not** read normal ChatGPT conversations, prompts or
+responses. Those are not exposed as local logs. A future optional OpenAI sign-in
+may show only activity that the app is officially authorised to access; it will
+never imply access to a person's ChatGPT history.
+
+## Build locally
+
+Run `./build.sh` in the repository root. It compiles the app, ad-hoc signs the
+local build and runs the integrated regression suite. The resulting app is for
+local testing; it is not yet notarized or App Store distributed.
+
+## Assets and licence
+
+The code is released under the [MIT License](LICENSE). The included Token
+Overdrive branding and local pixel-art resources are part of this repository and
+may be used under the same licence when redistributing the project. No remote
+image service is used by the galleries.
+
+## Release notes
 
 ## 0.43.0
 
@@ -49,6 +84,15 @@ remain local. Future optional ChatGPT sign-in will be used only for activity
 that Token Overdrive itself is allowed to access; it does not grant access to a
 person's ChatGPT conversations or prompts.
 
+## 0.9.8 · Stability & documentation
+
+The public documentation now names the product and its current release
+correctly, makes the local Codex-only scope explicit and documents the status
+panel in Cockpit settings. The status reports the selected local source, log
+count, latest observed event and last scan time. `Check Source` performs an
+immediate scan without sending anything to a network service. Branding and
+public links use **Ollifolio** consistently.
+
 ## 0.9.7 · Microphone response
 
 Microphone mode now owns the engine response even while Codex is working: synthesized engine playback remains stopped, so the mic can safely drive the RPM needle without a feedback loop. The speech range is expanded and the settings menu shows the live input percentage for an immediate signal check.
@@ -75,7 +119,7 @@ The Cockpit settings now show a clear local-source status: whether a `.codex` fo
 
 ## 0.9.1 · App Store candidate
 
-Die finalen Markenquellen sind `Resources/TokenOverdrive-Wordmark.svg` und `Resources/TokenOverdrive-AppIcon.svg`. Das Menü enthält nun einen Privacy-&-Legal-Bereich mit den geplanten Olifolio-Links. Tokenwerte werden erst nach einer bewussten Auswahl des lokalen `.codex`-Ordners gelesen; die vorbereiteten Sandbox-Entitlements erlauben dafür ausschließlich einen nutzergewählten Lesezugriff und Netzwerkzugriff für ausdrücklich gewählte RSS-Feeds.
+Die finalen Markenquellen sind `Resources/TokenOverdrive-Wordmark.svg` und `Resources/TokenOverdrive-AppIcon.svg`. Das Menü enthält nun einen Privacy-&-Legal-Bereich mit den geplanten Ollifolio-Links. Tokenwerte werden erst nach einer bewussten Auswahl des lokalen `.codex`-Ordners gelesen; die vorbereiteten Sandbox-Entitlements erlauben dafür ausschließlich einen nutzergewählten Lesezugriff und Netzwerkzugriff für ausdrücklich gewählte RSS-Feeds.
 
 ## 0.95.0
 
