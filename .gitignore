@@ -1,0 +1,17 @@
+# macOS and local builds
+.DS_Store
+*.app/
+*.zip
+native/TokenTacho
+
+# Historical prototypes and local previews
+index.html
+preview*.png
+Brand/
+TokenOverdrive-*/
+
+# Never publish local Codex or OAuth credentials
+.codex/
+auth.json
+*.sqlite
+*.sqlite-*
