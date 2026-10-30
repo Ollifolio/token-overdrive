@@ -1,4 +1,4 @@
-# Token Overdrive · 0.9.8
+# Token Overdrive · 0.9.9
 
 A playful, local-first macOS dashboard for Codex token activity, RSS headlines,
 pixel galleries and tiny arcade breaks. It turns the wait between prompt and
@@ -92,6 +92,16 @@ panel in Cockpit settings. The status reports the selected local source, log
 count, latest observed event and last scan time. `Check Source` performs an
 immediate scan without sending anything to a network service. Branding and
 public links use **Ollifolio** consistently.
+
+## 0.9.9 · Calm idle & startup consent
+
+Microphone mode now overrides the driving simulation completely: the engine
+needle settles around 1,080 RPM at silence and rises only beyond a small input
+noise floor. It can no longer be held at high RPM by an active Codex task.
+Replaying the splash uses an immediate, stable entrance and only fades on exit.
+On first launch of this version, the app explicitly explains and asks the user
+to continue before the local Codex token source is used in the interface. This
+is local source consent, not a ChatGPT account connection.
 
 ## 0.9.7 · Microphone response
 
